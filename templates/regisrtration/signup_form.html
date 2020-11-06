@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2>Sign up </h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Sign up</button>
+
+        </br>
+      </br>
+        </br>
+
+
+        <a href="{% url 'social:begin' 'github' %}"class="btn btn-success"role="button"> Sign in with Github</a>
+        </br>
+          </br>
+<a href="{% url 'social:begin' 'google-oauth2' %}"class="btn btn-success"role="button">Sign in with Google</a>
+</br>
+</br>
+      <a href="{% url 'social:begin' 'facebook' %}"class="btn btn-success"role="button">Sign in with Facebook</a>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
