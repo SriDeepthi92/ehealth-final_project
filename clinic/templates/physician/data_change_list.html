@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+    </ol>
+  </nav>
+
+
+  <a href="{% url 'physician:spiral_list' %}" class="btn btn-primary mb-3" role="button">spiral</a>
+  </br>
+      <tbody>
+        <!--{% for quiz in quizzes %}
+          <tr>
+            <td class="align-middle"><a href="{% url 'teachers:data_change' quiz.pk %}">{{ data.name }}</a></td>
+            <td class="align-middle">{{ quiz.subject.get_html_badge }}</td>
+            <td class="align-middle">{{ quiz.questions_count }}</td>
+            <td class="align-middle">{{ quiz.taken_count }}</td>
+            <td class="text-right">
+              <a href="{% url 'teachers:quiz_results' quiz.pk %}" class="btn btn-primary">View results</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="5">You haven't created any quiz yet.</td>
+          </tr>
+        {% endfor %}
+        -->
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
