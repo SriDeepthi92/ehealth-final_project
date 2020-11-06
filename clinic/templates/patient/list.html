@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<body style="background-color:powderblue;">
+<h3> Exercise Data </h3>
+    <head>
+        <title>List of persons</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body>
+        {% render_table data %}
+    </body>
+    </br>
+    </br>
+    <footer>
+      <a href="/Plotting-Two-Variables"" class="btn btn-teacher btn-lg" role="button">view time stats</a>
+    </footer>
+
+{% endblock %}
