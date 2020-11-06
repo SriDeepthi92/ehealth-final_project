@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+	<title>My first chart using FusionCharts</title>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	<script type="text/javascript">
+		FusionCharts.ready(function(){
+			var chartObj = new FusionCharts({
+    "type": "maps/world",
+    "renderAt": "chart-container",
+    "width": "600",
+    "height": "400",
+    "dataFormat": "json",
+    "dataSource": {
+        "chart": {
+            "caption": "Patients all over world",
+            "subcaption": "eHealth",
+            "theme": "fusion",
+            "markerBgColor": "#FF5733",
+            "markerRadius": "10",
+            "showMarkerLabels": "1",
+            "connectorColor": "#0CB2B0",
+            "connectorHoverColor": "#339933",
+            "entityFillColor": "#EBCB60",
+            "entityFillHoverColor": "#EBA760"
+        },
+        "markers": {
+            "items": [{
+                "id": "1",
+                "shapeid": "triangle",
+                "x": "340.23",
+                "y": "125.9",
+                "label": "P1",
+                "tooltext": "Patient 1",
+                "labelpos": "left"
+            }, {
+                "id": "2",
+                "shapeid": "triangle",
+                "x": "178.14",
+                "y": "154.9",
+                "label": "P2",
+                "tooltext": "Patient 2",
+                "labelpos": "bottom"
+            }, {
+                "id": "3",
+                "shapeid": "triangle",
+                "x": "458.14",
+                "y": "203.9",
+                "label": "P3",
+                "tooltext": "Patient 3",
+                "labelpos": "bottom"
+            }, {
+                "id": "4",
+                "shapeid": "triangle",
+                "x": "558.14",
+                "y": "255.9",
+                "label": "P4",
+                "tooltext": "Patient 4",
+                "labelpos": "bottom"
+            }, {
+                "id": "5",
+                "shapeid": "triangle",
+                "x": "573.14",
+                "y": "202.9",
+                "label": "P5",
+                "tooltext": "Patient 5",
+                "labelpos": "bottom"
+            }]
+        }
+    }
+}
+);
+			chartObj.render();
+		});
+	</script>
+	</head>
+	<body>
+		<div id="chart-container">FusionCharts XT will load here!</div>
+	</body>
+
+{% endblock %}
